@@ -20,7 +20,7 @@ packer --version
 
 ## Validate Template
 ```
-packer validate centos-ami-template.json
+packer validate centos-ami.json
 ```
 
 ## Build AMI
@@ -28,5 +28,5 @@ packer validate centos-ami-template.json
 packer build \
     -var 'aws_region=us-east-1' \
     -var 'subnet_id=REDACTED' \
-    centos-ami-template.json
+    centos-ami.json
 ```
