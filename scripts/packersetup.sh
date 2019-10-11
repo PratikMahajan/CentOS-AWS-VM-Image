@@ -8,8 +8,7 @@ fi
 VER=1.4.4
 
 if [  -n "$(uname -a | grep Ubuntu)" ]; then
-  sudo apt-get update && sudo apt-get install packer
-
+  apt-get update && pt-get install packer
 else
   echo "Downloading Packer"
   curl -O https://releases.hashicorp.com/packer/${VER}/packer_${VER}_linux_amd64.zip
