@@ -23,11 +23,11 @@
                 }
             ],
 	    "tags": {
-		"Source_AMI": "{{user `source_ami`}}",
+          "Source_AMI": "{{user `source_ami`}}",
           "OS": "CentOS 7",
           "Runner": "EC2",
-		"Name": "RecipeWebApp"
-      	    }
+          "Name": "RecipeWebApp"
+          }
         }
     ],
     "provisioners": [
