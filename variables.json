@@ -1,0 +1,13 @@
+{
+  "AWS_ACCESS_KEY_ID": "foo",
+  "AWS_SECRET_ACCESS_KEY": "bar",
+  "aws_region": "foo",
+  "subnet_id": "bar",
+  "source_ami": "foo",
+  "ssh_username": "bar",
+  "DB_ROOT_PASSWORD": "foo",
+  "DB_USER": "bar",
+  "DB_PASSWORD": "foo",
+  "DATABASE_NAME": "bar",
+  "DB_HOST": "bar"
+}

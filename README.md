@@ -26,7 +26,6 @@ packer validate centos-ami.json
 ## Build AMI
 ```
 packer build \
-    -var 'aws_region=us-east-1' \
-    -var 'subnet_id=REDACTED' \
+    -var-file=variables.json \
     centos-ami.json
 ```
