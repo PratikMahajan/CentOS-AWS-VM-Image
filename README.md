@@ -18,14 +18,27 @@ Validate the installation by running
 packer --version
 ```
 
+## Setting up AMI installation 
+* Create two copy of `variables.json.example` as `variables-dev.json` and `variables-prod.json`
+* In the variables file, fill all the details to create the AMI. 
+
+
 ## Validate Template
 ```
-packer validate centos-ami.json
+packer validate -var-file=<variables-file-name>.json centos-ami.json
 ```
 
 ## Build AMI
+**For Prod Environment**
 ```
 packer build \
-    -var-file=variables.json \
+    -var-file=variables-prod.json \
+    centos-ami.json
+```
+
+**For Dev Environment**
+```
+packer build \
+    -var-file=variables-dev.json \
     centos-ami.json
 ```
