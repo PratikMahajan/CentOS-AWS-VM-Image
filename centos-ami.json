@@ -34,7 +34,6 @@
         {
             "type": "shell",
             "environment_vars": [
-                "FOO=foo",
                 "DB_ROOT_PASSWORD={{user `DB_ROOT_PASSWORD`}}",
                 "DB_USER={{user `DB_USER`}}",
                 "DB_PASSWORD={{user `DB_PASSWORD`}}",
@@ -42,8 +41,8 @@
                 "DB_HOST={{user `DB_HOST`}}"
             ],
             "scripts": [
-              "scripts/scriptshere.sh",
-              "scripts/anotherhere.sh"
+              "scripts/dbsetup.sh",
+              "scripts/dbinit.sh"
               ]
         }
     ]
