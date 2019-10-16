@@ -42,6 +42,11 @@
     ],
     "provisioners": [
         {
+            "type": "file",
+            "source": "./scripts/requirements.txt",
+            "destination": "/home/centos/"
+        },
+        {
             "type": "shell",
             "environment_vars": [
                 "DB_ROOT_PASSWORD={{user `DB_ROOT_PASSWORD`}}",
@@ -51,8 +56,9 @@
                 "DB_HOST={{user `DB_HOST`}}"
             ],
             "scripts": [
-              "scripts/dbsetup.sh",
-              "scripts/dbinit.sh"
+                "scripts/dbsetup.sh",
+                "scripts/dbinit.sh",
+                "scripts/python-install.sh"
               ]
         }
     ]
