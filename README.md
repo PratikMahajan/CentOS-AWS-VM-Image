@@ -42,3 +42,8 @@ packer build \
     -var-file=variables-dev.json \
     centos-ami.json
 ```
+
+##Secure Copy for Web App Dependencies
+```
+scp -r ~/.ssh/key/generated /web/application/folder/to be/copied centos@publicIP:/new/folder/created
+```
