@@ -1,0 +1,65 @@
+{
+    "variables": {
+        "ssh_username":"centos",
+        "AWS_ACCESS_KEY_ID": "",
+        "AWS_SECRET_ACCESS_KEY": "",
+        "aws_region": "",
+        "subnet_id": "",
+        "source_ami": "",
+        "DB_ROOT_PASSWORD": "",
+        "DB_USER": "",
+        "DB_PASSWORD": "",
+        "DATABASE_NAME": "",
+        "DB_HOST": ""
+    },
+    "builders": [
+        {
+            "type": "amazon-ebs",
+            "access_key": "{{user `AWS_ACCESS_KEY_ID`}}",
+            "secret_key": "{{user `AWS_SECRET_ACCESS_KEY`}}",
+            "region": "{{user `aws_region`}}",
+            "instance_type": "t2.micro",
+            "subnet_id": "{{user `subnet_id`}}",
+            "source_ami": "{{user `source_ami`}}",
+            "ssh_username": "{{user `ssh_username`}}",
+            "ami_name": "csye6225_{{timestamp}}",
+            "ami_description": "CentOS AMI for RecipeApp",
+            "launch_block_device_mappings": [
+                {
+                    "device_name": "/dev/sda1",
+                    "volume_size": 8,
+                    "volume_type": "gp2",
+                    "delete_on_termination": true
+                }
+            ],
+	    "tags": {
+          "Source_AMI": "{{user `source_ami`}}",
+          "OS": "CentOS 7",
+          "Runner": "EC2",
+          "Name": "RecipeWebApp"
+          }
+        }
+    ],
+    "provisioners": [
+        {
+            "type": "file",
+            "source": "./scripts/requirements.txt",
+            "destination": "/home/centos/"
+        },
+        {
+            "type": "shell",
+            "environment_vars": [
+                "DB_ROOT_PASSWORD={{user `DB_ROOT_PASSWORD`}}",
+                "DB_USER={{user `DB_USER`}}",
+                "DB_PASSWORD={{user `DB_PASSWORD`}}",
+                "DATABASE_NAME={{user `DATABASE_NAME`}}",
+                "DB_HOST={{user `DB_HOST`}}"
+            ],
+            "scripts": [
+                "scripts/dbsetup.sh",
+                "scripts/dbinit.sh",
+                "scripts/python-install.sh"
+              ]
+        }
+    ]
+}
