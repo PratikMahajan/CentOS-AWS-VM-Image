@@ -7,13 +7,11 @@ sudo yum install ruby
 
 sudo yum install wget
 
-cd /home/centos
+wget -P /home/centos/ https://${BUCKET_NAME}.s3.${REGION_IDENTIFIER}.amazonaws.com/latest/install
 
-wget https://${BUCKET_NAME}.s3.${REGION_IDENTIFIER}.amazonaws.com/latest/install
+chmod +x /home/centos/install
 
-chmod +x ./install
-
-sudo ./install auto
+sudo ./home/centos/install auto
 
 sudo service codedeploy-agent start
 
