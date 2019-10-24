@@ -58,10 +58,9 @@
                 "REGION_IDENTIFIER={{user `REGION_IDENTIFIER`}}"
             ],
             "scripts": [
-                "scripts/dbsetup.sh",
-                "scripts/dbinit.sh",
+                "scripts/installClouddeploy.sh",
                 "scripts/python-install.sh",
-                "scripts/installClouddeploy.sh"
+                "scripts/installCloudwatch.sh"
               ]
         }
     ]

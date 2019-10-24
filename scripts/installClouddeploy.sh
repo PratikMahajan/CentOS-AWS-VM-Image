@@ -1,17 +1,18 @@
 #!/bin/bash
 
 
-sudo yum update
+sudo yum update -y
 
-sudo yum install ruby
+sudo yum install ruby -y
 
-sudo yum install wget
+sudo yum install wget -y
 
-wget -P /home/centos/ https://${BUCKET_NAME}.s3.${REGION_IDENTIFIER}.amazonaws.com/latest/install
+wget -P /home/centos/ https://aws-codedeploy-${REGION_IDENTIFIER}.s3.amazonaws.com/latest/install
 
+echo "------ modifying executable permission for install ------"
 chmod +x /home/centos/install
 
-sudo ./home/centos/install auto
+sudo /home/centos/./install auto
 
 sudo service codedeploy-agent start
 
