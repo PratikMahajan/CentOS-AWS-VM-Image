@@ -53,12 +53,15 @@
                 "DB_USER={{user `DB_USER`}}",
                 "DB_PASSWORD={{user `DB_PASSWORD`}}",
                 "DATABASE_NAME={{user `DATABASE_NAME`}}",
-                "DB_HOST={{user `DB_HOST`}}"
+                "DB_HOST={{user `DB_HOST`}}",
+                "BUCKET_NAME={{user `BUCKET_NAME`}}",
+                "REGION_IDENTIFIER={{user `REGION_IDENTIFIER`}}"
             ],
             "scripts": [
                 "scripts/dbsetup.sh",
                 "scripts/dbinit.sh",
-                "scripts/python-install.sh"
+                "scripts/python-install.sh",
+                "scripts/installClouddeploy.sh"
               ]
         }
     ]
