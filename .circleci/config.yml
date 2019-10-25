@@ -21,8 +21,10 @@ jobs:
           name: Build AMI
           command: |
             ./packer build \
-            -var "aws_region=${AWS_REGION}" \
-            -var "subnet_id=${AWS_SUBNET_ID}" \
+            -var "AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}" \
+            -var "AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}"
+            -var "aws_region=${aws_region}" \
+            -var "subnet_id=${subnet_id}" \
             -var "source_ami=${source_ami}" \
             -var "ssh_username=${ssh_username}" \
             -var "REGION_IDENTIFIER=${REGION_IDENTIFIER}" \

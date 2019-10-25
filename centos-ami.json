@@ -49,12 +49,6 @@
         {
             "type": "shell",
             "environment_vars": [
-                "DB_ROOT_PASSWORD={{user `DB_ROOT_PASSWORD`}}",
-                "DB_USER={{user `DB_USER`}}",
-                "DB_PASSWORD={{user `DB_PASSWORD`}}",
-                "DATABASE_NAME={{user `DATABASE_NAME`}}",
-                "DB_HOST={{user `DB_HOST`}}",
-                "BUCKET_NAME={{user `BUCKET_NAME`}}",
                 "REGION_IDENTIFIER={{user `REGION_IDENTIFIER`}}"
             ],
             "scripts": [
