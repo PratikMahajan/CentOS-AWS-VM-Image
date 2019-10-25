@@ -18,9 +18,6 @@ jobs:
             unzip packer*.zip
             chmod +x packer
       - run:
-          name: Validate Packer Template
-          command: ./packer validate ubuntu-ami-template.json
-      - run:
           name: Build AMI
           command: |
             ./packer build \
@@ -28,10 +25,5 @@ jobs:
             -var "subnet_id=${AWS_SUBNET_ID}" \
             -var "source_ami=${source_ami}" \
             -var "ssh_username=${ssh_username}" \
-            -var "DB_ROOT_PASSWORD=${DB_ROOT_PASSWORD}" \
-            -var "DB_USER=${DB_USER}" \
-            -var "DB_PASSWORD=${DB_PASSWORD}" \
-            -var "DATABASE_NAME=${DATABASE_NAME}" \
-            -var "DB_HOST=${DB_HOST}" \
             -var "REGION_IDENTIFIER=${REGION_IDENTIFIER}" \
             centos-ami.json
