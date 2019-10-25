@@ -22,7 +22,7 @@ jobs:
           command: |
             ./packer build \
             -var "AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}" \
-            -var "AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}"
+            -var "AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}" \
             -var "aws_region=${aws_region}" \
             -var "subnet_id=${subnet_id}" \
             -var "source_ami=${source_ami}" \
