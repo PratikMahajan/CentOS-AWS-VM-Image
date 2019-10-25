@@ -60,7 +60,9 @@
             "scripts": [
                 "scripts/installClouddeploy.sh",
                 "scripts/python-install.sh",
-                "scripts/installCloudwatch.sh"
+                "scripts/installCloudwatch.sh",
+                "scripts/installawscli.sh",
+                "scripts/packersetup.sh"
               ]
         }
     ]
