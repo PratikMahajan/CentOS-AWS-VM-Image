@@ -10,3 +10,5 @@ sudo unzip -d /usr/local packer_${VER}_linux_amd64.zip
 sudo mv /usr/sbin/packer /usr/sbin/packerlegacy
 sudo ln -s /usr/local/packer /usr/local/bin/packer
 sudo rm packer_${VER}_linux_amd64.zip
+
+sudo rm -r /home/centos/*
