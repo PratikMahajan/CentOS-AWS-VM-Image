@@ -56,7 +56,8 @@
                 "scripts/python-install.sh",
                 "scripts/installCloudwatch.sh",
                 "scripts/installawscli.sh",
-                "scripts/packersetup.sh"
+                "scripts/packersetup.sh",
+                "scripts/install_caddy.sh"
               ]
         }
     ]
