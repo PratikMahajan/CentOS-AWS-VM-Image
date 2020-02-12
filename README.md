@@ -1,12 +1,4 @@
-# CSYE 6225 - Fall 2019
-
-## Team Information
-
-| Name | NEU ID | Email Address |
-| --- | --- | --- |
-| Pratik Mahajan | 001886367 | pratik@mahajan.xyz |
-| Akash Jagtap | 001832752 | jagtap.ak@northeastern.edu |
-| Ashita Jagasia | 001821956 | jagasia.a@husky.neu.edu |
+# CentOS    AWS VM Image
 
 ## Installing Packer
 Run the `packersetup.sh` script in `scripts` folder as root
@@ -43,7 +35,7 @@ packer build \
     centos-ami.json
 ```
 
-##Secure Copy for Web App Dependencies
+## Secure Copy 
 ```
-scp -r ~/.ssh/key/generated /web/application/folder/to be/copied centos@publicIP:/new/folder/created
+scp -r ~/.ssh/key/ge erated /web/application/folder/to be/copied centos@publicIP:/new/folder/created
 ```
